@@ -5,14 +5,18 @@ GVLK KEYS ARE WRITTEN LOWER IN THIS FILE
 
 Script to activate (open cmd.exe as the Administrator:
 
+
 2010 x32:
 just seek for ospp.vbs file and do as in 2016
+
 
 2010 x64:
 just seek for ospp.vbs file and do as in 2016
 
+
 2013 x32:
 just seek for ospp.vbs file and do as in 2016
+
 
 2013 x64
 just seek for ospp.vbs file and do as in 2016
@@ -24,6 +28,7 @@ cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK
 
 cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /act
 
+
 2016 x64:
 cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /sethst:IP_OR_DNS_NAME_OF_PRIVATE_OR_PUBLIC_KMS_SERVER
 
@@ -31,14 +36,18 @@ cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK_KEY_O
 
 cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /act
 
+
 2019 x32:
 just seek for ospp.vbs file and do as in 2016
+
 
 2019 x64:
 just seek for ospp.vbs file and do as in 2016
 
+
 2021 x32:
 just seek for ospp.vbs file and do as in 2016
+
 
 2021 x64:
 just seek for ospp.vbs file and do as in 2016
