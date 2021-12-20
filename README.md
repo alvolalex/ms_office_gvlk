@@ -19,12 +19,16 @@ just seek for ospp.vbs file and do as in 2016
 
 2016 x32:
 cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /sethst:IP_OR_DNS_NAME_OF_PRIVATE_OR_PUBLIC_KMS_SERVER
+
 cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK_KEY_OF_YOUR_PRODUCT
+
 cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /act
 
 2016 x64:
 cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /sethst:IP_OR_DNS_NAME_OF_PRIVATE_OR_PUBLIC_KMS_SERVER
+
 cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK_KEY_OF_YOUR_PRODUCT
+
 cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /act
 
 2019 x32:
