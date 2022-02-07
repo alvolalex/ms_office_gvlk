@@ -1,4 +1,7 @@
 # ms_office_gvlk
+
+Microsoft Office GVLK ALL VERSIONS AND PRODUCTS
+
 Microsoft Office 2010, 2013, 2016, 2019, LTSC 2021 GVLK keys for activation via KMS server
 
 GVLK KEYS ARE WRITTEN LOWER IN THIS FILE
