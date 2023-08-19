@@ -1,70 +1,21 @@
 # ms_office_gvlk
 
-Microsoft Office GVLK ALL VERSIONS AND PRODUCTS
+Microsoft Office 2010, 2013, 2016, 2019, 2021 all versions and products GVLK keys for activation via public or private KMS server. 
+The keys are written lower.
 
-Microsoft Office 2010, 2013, 2016, 2019, LTSC 2021 GVLK keys for activation via KMS server
-
-GVLK KEYS ARE WRITTEN LOWER IN THIS FILE
-
-Script to activate (open cmd.exe as the Administrator:
-
-
-2010 x32:
-
-just seek for ospp.vbs file and do as in 2016
-
-
-2010 x64:
-
-just seek for ospp.vbs file and do as in 2016
-
-
-2013 x32:
-
-just seek for ospp.vbs file and do as in 2016
-
-
-2013 x64
-
-just seek for ospp.vbs file and do as in 2016
+Script to activate (open cmd.exe as Administrator):
 
 2016 x32:
-
 cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /sethst:IP_OR_DNS_NAME_OF_PRIVATE_OR_PUBLIC_KMS_SERVER
-
 cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK_KEY_OF_YOUR_PRODUCT
-
 cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /act
 
-
 2016 x64:
-
 cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /sethst:IP_OR_DNS_NAME_OF_PRIVATE_OR_PUBLIC_KMS_SERVER
-
 cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK_KEY_OF_YOUR_PRODUCT
-
 cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /act
 
-
-2019 x32:
-
-just seek for ospp.vbs file and do as in 2016
-
-
-2019 x64:
-
-just seek for ospp.vbs file and do as in 2016
-
-
-2021 x32:
-just seek for ospp.vbs file and do as in 2016
-
-
-2021 x64:
-
-just seek for ospp.vbs file and do as in 2016
-
-
+2010 x32/x64, 2013 x32/x64, 2019 x32/x64, 2021 x32/x64 -- just seek for ospp.vbs file and do as in 2016
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -122,7 +73,6 @@ QYYW6-QP4CB-MBV6G-HYMCJ-4T3J4
 
 Word 2010
 HVHB3-C6FV7-KQX9W-YQG79-CRY7T
-
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -265,7 +215,7 @@ PBX3G-NWMT6-Q7XBW-PYJGG-WXD33
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-LTSC 2021:
+2021:
 
 Office LTSC Professional Plus 2021
 FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
@@ -305,4 +255,3 @@ HWCXN-K3WBT-WJBKY-R8BD9-XK29P
 
 Word LTSC 2021
 TN8H9-M34D3-Y64V9-TR72V-X79KV
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
