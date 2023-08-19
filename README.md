@@ -6,11 +6,13 @@ The keys are written lower.
 Script to activate (open cmd.exe as Administrator):
 
 2016 x32:
+
 cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /sethst:IP_OR_DNS_NAME_OF_PRIVATE_OR_PUBLIC_KMS_SERVER
 cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK_KEY_OF_YOUR_PRODUCT
 cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /act
 
 2016 x64:
+
 cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /sethst:IP_OR_DNS_NAME_OF_PRIVATE_OR_PUBLIC_KMS_SERVER
 cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK_KEY_OF_YOUR_PRODUCT
 cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /act
