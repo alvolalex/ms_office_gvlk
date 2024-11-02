@@ -216,7 +216,13 @@ PBX3G-NWMT6-Q7XBW-PYJGG-WXD33
 
 2021:  
 
-Office LTSC Professional Plus 2021  
+Office Professional Plus 2021 (2024?)  
+YVY2H-8F9FJ-YGQFQ-9M9YX-9GVY3
+
+Office Standard 2021 (2024?)  
+77G9C-2W9FQ-3B8Y3-F2B8X-QBFGG
+
+Office LTSC Professional Plus 2021 (2024?)  
 FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH  
 
 Office LTSC Standard 2021  
