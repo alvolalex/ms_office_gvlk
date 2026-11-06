@@ -1,5 +1,47 @@
 # Microsoft Office GVLK reference
 
+## Quick start for beginners: Microsoft Activation Scripts (MAS)
+
+If you are looking for the simplest guided option rather than configuring
+Office KMS manually, the community-maintained **Microsoft Activation Scripts
+(MAS)** project provides an interactive menu. It is a third-party project,
+not a Microsoft utility, and it is separate from the GVLK key reference below.
+
+1. Open **Windows PowerShell** as Administrator.
+2. Review the MAS project and its current instructions:
+   [MAS official project page](https://massgrave.dev/) ·
+   [MAS source repository](https://github.com/massgravel/Microsoft-Activation-Scripts).
+3. If you trust the source and understand that the command downloads and
+   immediately executes a remote script, copy the command below into the
+   elevated PowerShell window.
+
+**Copy command:**
+
+```powershell
+irm https://get.activated.win | iex
+```
+
+The command uses PowerShell aliases: `irm` downloads the script
+(`Invoke-RestMethod`), and `iex` executes the returned text
+(`Invoke-Expression`). An interactive MAS menu should appear; follow its
+on-screen descriptions and choose only an option that matches your actual
+license and usage rights.
+
+**Security note:** this is convenient, but it does not let you inspect the
+downloaded code before execution. Do not run it on a work computer or any
+system with sensitive data unless your organization permits it and you have
+reviewed the source and trust implications. For a review-first approach,
+read the project documentation and source repository before running anything.
+Never treat MAS as an official Microsoft activation method.
+
+**Important:** MAS activation methods and Microsoft volume activation are
+different things. The GVLK list and `ospp.vbs` instructions in this repository
+are for properly licensed volume editions using an authorized KMS host or
+Active Directory-based activation. A GVLK is not a license and does not grant
+activation or usage rights by itself.
+
+---
+
 A reference list of Generic Volume License Keys (GVLKs) for volume-licensed
 Microsoft Office, Project, and Visio editions.
 
@@ -87,12 +129,11 @@ troubleshooting.
 
 ## About Microsoft Activation Scripts (MAS)
 
-MAS is a separate, third-party project. Its PowerShell command is not an
-Office GVLK/KMS client configuration command and is not a Microsoft activation
-tool. This repository documents GVLK reference data and native volume
-activation; it does not recommend piping a remotely downloaded script directly
-into PowerShell for execution. Review third-party code and its trust model
-before running it.
+The quick-start section at the top links to the MAS project and explains its
+one-line PowerShell launcher. MAS is third-party software, not a Microsoft
+utility, and its activation methods are distinct from native Office volume
+activation with GVLKs, KMS, or Active Directory. Keep those workflows separate
+when diagnosing licensing or documenting an organization's deployment.
 
 ## Primary references
 
