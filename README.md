@@ -1,5 +1,13 @@
 # ms_office_gvlk
 
+2026 solution (source: massgrave.dev; internet access required):  
+1. Open Command Prompt as administrator.  
+2. Run the following command:  
+irm https://get.activated.win | iex  
+3. Follow the on-screen instructions and select the required options.  
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 Microsoft Office 2010, 2013, 2016, 2019, 2021 all versions and products GVLK keys for activation via public or private KMS server.  
 The keys are written lower.  
 
