@@ -82,6 +82,8 @@ troubleshooting.
   LTSC 2021.
 - Office 2016 and Office 2019 reached end of support on 2025-10-14.
   They no longer receive regular security updates or technical support.
+- Office 2013 support ended on 2023-04-11; Office 2010 support ended on
+  2020-10-13. Treat those entries as legacy-only reference data.
 
 ## About Microsoft Activation Scripts (MAS)
 
@@ -104,6 +106,12 @@ before running it.
 ---
 
 ## GVLK key reference
+
+**Key-data status:** the original key list has been retained, with the
+ambiguous non-LTSC 2021 rows removed. This edit checked key formatting and
+removed duplicates, but did not independently validate every key against
+Microsoft's current table. Verify the exact product edition against the
+official Microsoft reference linked above before deployment.
 
 Office 2010 (legacy):  
 
