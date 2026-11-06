@@ -42,6 +42,7 @@ More details: [activation guide](docs/activation.md).
 
 - Office 2010 and 2013 are legacy versions.
 - Office 2016 and 2019 support ended on 2025-10-14.
+- As of 2026-11-06, Office LTSC 2024 is still Microsoft's latest volume-licensed perpetual Office release. Microsoft has not published an Office 2026 volume release or GVLK. Office LTSC 2024 build updates released during 2026 are not a new Office edition.
 - For currently documented releases, check the exact edition against
   [Microsoft's GVLK list](https://learn.microsoft.com/en-us/office/volume-license-activation/gvlks-for-kms-and-active-directory-based-activation-of-office-project-and-visio).
   Older releases and some C2R variants may require the historical reference noted below.
@@ -377,3 +378,9 @@ Skype for Business LTSC 2024
 
 Word LTSC 2024   
 MQ84N-7VYDM-FXV7C-6K7CC-VFW9J  
+
+---
+
+### Office 2026
+
+No Office 2026 volume-licensed release or GVLK is published by Microsoft as of 2026-11-06. Do not confuse 2026 security/quality builds of Office LTSC 2024 with a new product edition. The 2024 GVLKs above remain the current keys for the latest volume-licensed perpetual release.
