@@ -103,7 +103,7 @@ before running it.
 
 ---
 
-GVLK KEYS:  
+## GVLK key reference
 
 Office 2010 (legacy):  
 
@@ -158,7 +158,7 @@ QYYW6-QP4CB-MBV6G-HYMCJ-4T3J4
 Word 2010  
 HVHB3-C6FV7-KQX9W-YQG79-CRY7T  
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+---
 
 Office 2013 (legacy):  
 
@@ -241,13 +241,13 @@ DR92N-9HTF2-97XKM-XW2WJ-XW3J6
 Outlook 2016  
 R69KK-NTPKF-7M3Q4-QYBHW-6MT9B  
 
-Powerpoint 2016  
+PowerPoint 2016  
 J7MQP-HNJ4Y-WJ7YM-PFYGF-BY6C6  
 
 Publisher 2016  
 F47MM-N3XJP-TQXJ9-BP99D-8K837  
 
-Skype 2016  
+Skype for Business 2016  
 869NQ-FJ69K-466HW-QYCP2-DDBV6  
 
 Word 2016  
@@ -300,13 +300,7 @@ PBX3G-NWMT6-Q7XBW-PYJGG-WXD33
 
 Office LTSC 2021:  
 
-Office Professional Plus 2021 (2024?)  
-YVY2H-8F9FJ-YGQFQ-9M9YX-9GVY3
-
-Office Standard 2021 (2024?)  
-77G9C-2W9FQ-3B8Y3-F2B8X-QBFGG
-
-Office LTSC Professional Plus 2021 (2024?)  
+Office LTSC Professional Plus 2021  
 FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH  
 
 Office LTSC Standard 2021  
@@ -374,7 +368,7 @@ F4DYN-89BP2-WQTWJ-GR8YC-CKGJG
 Outlook LTSC 2024	 
 D2F8D-N3Q3B-J28PV-X27HD-RJWB9  
 
-PowerPoint LTSC 2024  
+PowerPoint LTSC 2024
 CW94N-K6GJH-9CTXY-MG2VC-FYCWP  
 
 Skype for Business LTSC 2024  
