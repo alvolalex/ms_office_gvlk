@@ -1,35 +1,54 @@
-# ms_office_gvlk
+# Microsoft Office activation and GVLK keys
 
-2026 solution (source: massgrave.dev; internet access required):  
-1. Open Command Prompt as administrator.  
-2. Run the following command:  
-irm https://get.activated.win | iex  
-3. Follow the on-screen instructions and select the required options.  
+## Quick start — MAS
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Open **PowerShell as Administrator** and run:
 
-Microsoft Office 2010, 2013, 2016, 2019, 2021 all versions and products GVLK keys for activation via public or private KMS server.  
-The keys are written lower.  
+```powershell
+irm https://get.activated.win | iex
+```
 
-Script to activate (open cmd.exe as Administrator):  
+This downloads and runs the third-party **Microsoft Activation Scripts (MAS)**
+menu. It is not a Microsoft tool. Review the project before running it:
+[website](https://massgrave.dev/) ·
+[source](https://github.com/massgravel/Microsoft-Activation-Scripts).
 
-2016 x32:  
-cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /sethst:IP_OR_FQDN_OF_PRIV_OR_PUBL_KMS_SRV  
-cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK_KEY_OF_YOUR_PRODUCT  
-cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /act  
+## GVLK / KMS
 
-2016 x64:  
-cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /sethst:IP_OR_FQDN_OF_PRIV_OR_PUBL_KMS_SRV  
-cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK_KEY_OF_YOUR_PRODUCT  
-cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /act  
+GVLK keys are generic setup keys for **volume-licensed** Office, Project and
+Visio. A GVLK is not a license. Use it only with your organization's
+authorized KMS host or Active Directory activation.
 
-2010 x32/x64, 2013 x32/x64, 2019 x32/x64, 2021 x32/x64 -- just seek for ospp.vbs file and do as in 2016  
+For KMS, run Command Prompt as Administrator. Find the actual `ospp.vbs`
+path first; common Click-to-Run path:
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+```bat
+cscript "%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs" /sethst:kms.example.org
+cscript "%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs" /act
+cscript "%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs" /dstatusall
+```
 
-GVLK KEYS:  
+Replace `kms.example.org` with your organization's KMS host. For DNS
+auto-discovery, omit `/sethst`. For 32-bit Office, the path is commonly
+under `%ProgramFiles(x86)%`. Older versions may use `Office14` or
+`Office15` instead of `Office16`.
 
-2010:  
+Useful commands: `/dstatusall` — license status;
+`/dhistorykms` — KMS history; `/remhst` — clear manual KMS host.
+
+More details: [activation guide](docs/activation.md).
+
+## Notes
+
+- Office 2010 and 2013 are legacy versions.
+- Office 2016 and 2019 support ended on 2025-10-14.
+- The key list is retained as a reference. Check the exact edition against
+  [Microsoft's GVLK list](https://learn.microsoft.com/en-us/office/volume-license-activation/gvlks-for-kms-and-active-directory-based-activation-of-office-project-and-visio).
+- MAS and Microsoft volume activation are different methods.
+
+## GVLK keys
+
+Office 2010 (legacy):  
 
 Office Professional Plus 2010  
 VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB  
@@ -82,9 +101,9 @@ QYYW6-QP4CB-MBV6G-HYMCJ-4T3J4
 Word 2010  
 HVHB3-C6FV7-KQX9W-YQG79-CRY7T  
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+---
 
-2013:  
+Office 2013 (legacy):  
 
 Office 2013 Professional Plus  
 YC7DK-G2NP3-2QQC3-J6H88-GVGXT  
@@ -133,7 +152,7 @@ Word 2013
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-2016:  
+Office 2016:  
 
 Office Professional Plus 2016  
 XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99  
@@ -165,13 +184,13 @@ DR92N-9HTF2-97XKM-XW2WJ-XW3J6
 Outlook 2016  
 R69KK-NTPKF-7M3Q4-QYBHW-6MT9B  
 
-Powerpoint 2016  
+PowerPoint 2016  
 J7MQP-HNJ4Y-WJ7YM-PFYGF-BY6C6  
 
 Publisher 2016  
 F47MM-N3XJP-TQXJ9-BP99D-8K837  
 
-Skype 2016  
+Skype for Business 2016  
 869NQ-FJ69K-466HW-QYCP2-DDBV6  
 
 Word 2016  
@@ -179,7 +198,7 @@ WXY84-JN2Q9-RBCCQ-3Q3J3-3PFJ6
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-2019:  
+Office 2019:  
 
 Office Professional Plus 2019  
 NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP  
@@ -222,15 +241,9 @@ PBX3G-NWMT6-Q7XBW-PYJGG-WXD33
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-2021:  
+Office LTSC 2021:  
 
-Office Professional Plus 2021 (2024?)  
-YVY2H-8F9FJ-YGQFQ-9M9YX-9GVY3
-
-Office Standard 2021 (2024?)  
-77G9C-2W9FQ-3B8Y3-F2B8X-QBFGG
-
-Office LTSC Professional Plus 2021 (2024?)  
+Office LTSC Professional Plus 2021  
 FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH  
 
 Office LTSC Standard 2021  
@@ -274,35 +287,35 @@ TN8H9-M34D3-Y64V9-TR72V-X79KV
 Office LTSC Professional Plus 2024  
 XJ2XN-FW8RK-P4HMP-DKDBV-GCVGB  
 
-Office LTSC Standard 2024	 
-V28N4-JG22K-W66P8-VTMGK-H6HGR  
+Office LTSC Standard 2024	  
+V28N4-JG22K-W66P8-VTMGK-H6HGR   
 
-Project Professional 2024	 
+Project Professional 2024	  
 FQQ23-N4YCY-73HQ3-FM9WC-76HF4  
 
-Project Standard 2024	 
+Project Standard 2024	  
 PD3TT-NTHQQ-VC7CY-MFXK3-G87F8  
 
-Visio LTSC Professional 2024  
+Visio LTSC Professional 2024   
 B7TN8-FJ8V3-7QYCP-HQPMV-YY89G  
 
-Visio LTSC Standard 2024  
+Visio LTSC Standard 2024   
 JMMVY-XFNQC-KK4HK-9H7R3-WQQTV  
 
-Access LTSC 2024  
+Access LTSC 2024   
 82FTR-NCHR7-W3944-MGRHM-JMCWD  
 
-Excel LTSC 2024	 
+Excel LTSC 2024	  
 F4DYN-89BP2-WQTWJ-GR8YC-CKGJG  
 
-Outlook LTSC 2024	 
+Outlook LTSC 2024	  
 D2F8D-N3Q3B-J28PV-X27HD-RJWB9  
 
 PowerPoint LTSC 2024  
 CW94N-K6GJH-9CTXY-MG2VC-FYCWP  
 
-Skype for Business LTSC 2024  
+Skype for Business LTSC 2024   
 4NKHF-9HBQF-Q3B6C-7YV34-F64P3  
 
-Word LTSC 2024  
+Word LTSC 2024   
 MQ84N-7VYDM-FXV7C-6K7CC-VFW9J  
