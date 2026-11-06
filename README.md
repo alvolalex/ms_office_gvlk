@@ -1,35 +1,111 @@
-# ms_office_gvlk
+# Microsoft Office GVLK reference
 
-2026 solution (source: massgrave.dev; internet access required):  
-1. Open Command Prompt as administrator.  
-2. Run the following command:  
-irm https://get.activated.win | iex  
-3. Follow the on-screen instructions and select the required options.  
+A reference list of Generic Volume License Keys (GVLKs) for volume-licensed
+Microsoft Office, Project, and Visio editions.
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+**Scope:** use these keys only in an organization that has the appropriate
+Microsoft volume-licensing rights and a configured activation method.
+A GVLK is a public KMS client setup key. It is not a license, does not grant
+usage rights, and cannot turn a retail or personal Office installation into
+a volume-licensed product.
 
-Microsoft Office 2010, 2013, 2016, 2019, 2021 all versions and products GVLK keys for activation via public or private KMS server.  
-The keys are written lower.  
+## Activation model
 
-Script to activate (open cmd.exe as Administrator):  
+- **KMS:** the Office client discovers an authorized KMS host through DNS
+  (SRV records) by default. Manual host configuration is normally unnecessary.
+- **Active Directory-based activation:** domain-joined clients activate
+  through an activation object published in Active Directory.
+- **MAK:** a separate, organization-issued Multiple Activation Key. A GVLK
+  is not a MAK and cannot be used as one.
 
-2016 x32:  
-cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /sethst:IP_OR_FQDN_OF_PRIV_OR_PUBL_KMS_SRV  
-cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK_KEY_OF_YOUR_PRODUCT  
-cscript "c:\Program Files (x86)\Microsoft Office\Office16\ospp.vbs" /act  
+For Office volume editions, the GVLK is normally preinstalled. A suite such as
+Office Professional Plus needs its suite key; separate keys for Word, Excel,
+and Outlook are not needed when they are components of that suite.
 
-2016 x64:  
-cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /sethst:IP_OR_FQDN_OF_PRIV_OR_PUBL_KMS_SRV  
-cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /inpkey:GVLK_KEY_OF_YOUR_PRODUCT  
-cscript "c:\Program Files\Microsoft Office\Office16\ospp.vbs" /act  
+## Quick client-side KMS configuration
 
-2010 x32/x64, 2013 x32/x64, 2019 x32/x64, 2021 x32/x64 -- just seek for ospp.vbs file and do as in 2016  
+Run the commands below in an elevated Command Prompt on the Office client.
+Use a KMS host managed by your organization and authorized for your licensing.
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Find `ospp.vbs` first. For current Click-to-Run Office 2016/2019/LTSC
+installations, common paths are:
+
+- 64-bit Office: `%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs`
+- 32-bit Office on 64-bit Windows:
+  `%ProgramFiles(x86)%\Microsoft Office\root\Office16\ospp.vbs`
+
+Older MSI-based releases and some older installations may not contain
+`root\`; the folder can be `Office14` (Office 2010), `Office15`
+(Office 2013), or `Office16` (Office 2016 and later). The actual installation
+location is authoritative.
+
+Example for a modern 64-bit Office installation (replace the host and key
+with values appropriate to your licensed deployment):
+
+```bat
+cscript "%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs" /sethst:kms.example.org
+cscript "%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs" /inpkey:GVLK_KEY_FOR_YOUR_EDITION
+cscript "%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs" /act
+cscript "%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs" /dstatusall
+```
+
+If DNS-based KMS discovery is configured correctly, omit `/sethst` and let
+the client discover the host automatically. To remove a manually configured
+host and return to discovery, use `/remhst`. The default KMS TCP port is
+1688; use `/setprt:PORT` only when your organization configured another port.
+
+Useful diagnostics:
+
+| Command | Purpose |
+| --- | --- |
+| `/dstatus` | Show license status for installed product keys |
+| `/dstatusall` | Show status for all installed licenses |
+| `/dhistorykms` | Show KMS activation history |
+| `/sethst:HOST` | Set an explicitly configured KMS host |
+| `/setprt:PORT` | Set the KMS port (default: 1688) |
+| `/remhst` | Remove the explicit host and restore DNS discovery |
+| `/cachst:TRUE` / `/cachst:FALSE` | Enable or disable KMS host caching |
+
+See [the client activation guide](docs/activation.md) for context and
+troubleshooting.
+
+## Important version notes
+
+- The current Microsoft GVLK reference covers Office LTSC 2024, Office LTSC
+  2021, Office 2019, and Office 2016, including Project and Visio.
+- Office 2010 and 2013 entries below are retained as historical reference.
+  They are not covered by the current Microsoft Learn GVLK article; validate
+  legacy deployments against the licensing documentation for that release.
+- The ambiguous non-LTSC "Office Professional Plus 2021" and
+  "Office Standard 2021" entries previously labelled "(2024?)" have been
+  removed. The Microsoft-published volume editions are listed as Office
+  LTSC 2021.
+- Office 2016 and Office 2019 reached end of support on 2025-10-14.
+  They no longer receive regular security updates or technical support.
+
+## About Microsoft Activation Scripts (MAS)
+
+MAS is a separate, third-party project. Its PowerShell command is not an
+Office GVLK/KMS client configuration command and is not a Microsoft activation
+tool. This repository documents GVLK reference data and native volume
+activation; it does not recommend piping a remotely downloaded script directly
+into PowerShell for execution. Review third-party code and its trust model
+before running it.
+
+## Primary references
+
+- [Microsoft: GVLKs for KMS and Active Directory-based activation of Office,
+  Project, and Visio](https://learn.microsoft.com/en-us/office/volume-license-activation/gvlks-for-kms-and-active-directory-based-activation-of-office-project-and-visio)
+- [Microsoft: Activate volume licensed Office by using KMS](https://learn.microsoft.com/en-us/office/volume-license-activation/activate-office-by-using-kms)
+- [Microsoft: Activate volume licensed Office by using Active Directory](https://learn.microsoft.com/en-us/office/volume-license-activation/activate-office-by-using-active-directory)
+- [Microsoft: Tools to manage volume activation of Office](https://learn.microsoft.com/en-us/office/volume-license-activation/tools-to-manage-volume-activation-of-office)
+- [Microsoft: Troubleshoot volume activation of Office](https://learn.microsoft.com/en-us/office/volume-license-activation/troubleshoot-volume-activation-of-office)
+
+---
 
 GVLK KEYS:  
 
-2010:  
+Office 2010 (legacy):  
 
 Office Professional Plus 2010  
 VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB  
@@ -84,7 +160,7 @@ HVHB3-C6FV7-KQX9W-YQG79-CRY7T
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-2013:  
+Office 2013 (legacy):  
 
 Office 2013 Professional Plus  
 YC7DK-G2NP3-2QQC3-J6H88-GVGXT  
@@ -133,7 +209,7 @@ Word 2013
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-2016:  
+Office 2016:  
 
 Office Professional Plus 2016  
 XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99  
@@ -179,7 +255,7 @@ WXY84-JN2Q9-RBCCQ-3Q3J3-3PFJ6
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-2019:  
+Office 2019:  
 
 Office Professional Plus 2019  
 NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP  
@@ -222,7 +298,7 @@ PBX3G-NWMT6-Q7XBW-PYJGG-WXD33
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-2021:  
+Office LTSC 2021:  
 
 Office Professional Plus 2021 (2024?)  
 YVY2H-8F9FJ-YGQFQ-9M9YX-9GVY3
