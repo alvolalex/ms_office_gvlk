@@ -1,158 +1,52 @@
-# Microsoft Office GVLK reference
+# Microsoft Office activation and GVLK keys
 
-## Quick start for beginners: Microsoft Activation Scripts (MAS)
+## Quick start — MAS
 
-If you are looking for the simplest guided option rather than configuring
-Office KMS manually, the community-maintained **Microsoft Activation Scripts
-(MAS)** project provides an interactive menu. It is a third-party project,
-not a Microsoft utility, and it is separate from the GVLK key reference below.
-
-1. Open **Windows PowerShell** as Administrator.
-2. Review the MAS project and its current instructions:
-   [MAS official project page](https://massgrave.dev/) ·
-   [MAS source repository](https://github.com/massgravel/Microsoft-Activation-Scripts).
-3. If you trust the source and understand that the command downloads and
-   immediately executes a remote script, copy the command below into the
-   elevated PowerShell window.
-
-**Copy command:**
+Open **PowerShell as Administrator** and run:
 
 ```powershell
 irm https://get.activated.win | iex
 ```
 
-The command uses PowerShell aliases: `irm` downloads the script
-(`Invoke-RestMethod`), and `iex` executes the returned text
-(`Invoke-Expression`). An interactive MAS menu should appear; follow its
-on-screen descriptions and choose only an option that matches your actual
-license and usage rights.
+This downloads and runs the third-party **Microsoft Activation Scripts (MAS)**
+menu. It is not a Microsoft tool. Review the project before running it:
+[website](https://massgrave.dev/) ·
+[source](https://github.com/massgravel/Microsoft-Activation-Scripts).
 
-**Security note:** this is convenient, but it does not let you inspect the
-downloaded code before execution. Do not run it on a work computer or any
-system with sensitive data unless your organization permits it and you have
-reviewed the source and trust implications. For a review-first approach,
-read the project documentation and source repository before running anything.
-Never treat MAS as an official Microsoft activation method.
+## GVLK / KMS
 
-**Important:** MAS activation methods and Microsoft volume activation are
-different things. The GVLK list and `ospp.vbs` instructions in this repository
-are for properly licensed volume editions using an authorized KMS host or
-Active Directory-based activation. A GVLK is not a license and does not grant
-activation or usage rights by itself.
+GVLK keys are generic setup keys for **volume-licensed** Office, Project and
+Visio. A GVLK is not a license. Use it only with your organization's
+authorized KMS host or Active Directory activation.
 
----
-
-A reference list of Generic Volume License Keys (GVLKs) for volume-licensed
-Microsoft Office, Project, and Visio editions.
-
-**Scope:** use these keys only in an organization that has the appropriate
-Microsoft volume-licensing rights and a configured activation method.
-A GVLK is a public KMS client setup key. It is not a license, does not grant
-usage rights, and cannot turn a retail or personal Office installation into
-a volume-licensed product.
-
-## Activation model
-
-- **KMS:** the Office client discovers an authorized KMS host through DNS
-  (SRV records) by default. Manual host configuration is normally unnecessary.
-- **Active Directory-based activation:** domain-joined clients activate
-  through an activation object published in Active Directory.
-- **MAK:** a separate, organization-issued Multiple Activation Key. A GVLK
-  is not a MAK and cannot be used as one.
-
-For Office volume editions, the GVLK is normally preinstalled. A suite such as
-Office Professional Plus needs its suite key; separate keys for Word, Excel,
-and Outlook are not needed when they are components of that suite.
-
-## Quick client-side KMS configuration
-
-Run the commands below in an elevated Command Prompt on the Office client.
-Use a KMS host managed by your organization and authorized for your licensing.
-
-Find `ospp.vbs` first. For current Click-to-Run Office 2016/2019/LTSC
-installations, common paths are:
-
-- 64-bit Office: `%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs`
-- 32-bit Office on 64-bit Windows:
-  `%ProgramFiles(x86)%\Microsoft Office\root\Office16\ospp.vbs`
-
-Older MSI-based releases and some older installations may not contain
-`root\`; the folder can be `Office14` (Office 2010), `Office15`
-(Office 2013), or `Office16` (Office 2016 and later). The actual installation
-location is authoritative.
-
-Example for a modern 64-bit Office installation (replace the host and key
-with values appropriate to your licensed deployment):
+For KMS, run Command Prompt as Administrator. Find the actual `ospp.vbs`
+path first; common Click-to-Run path:
 
 ```bat
 cscript "%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs" /sethst:kms.example.org
-cscript "%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs" /inpkey:GVLK_KEY_FOR_YOUR_EDITION
 cscript "%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs" /act
 cscript "%ProgramFiles%\Microsoft Office\root\Office16\ospp.vbs" /dstatusall
 ```
 
-If DNS-based KMS discovery is configured correctly, omit `/sethst` and let
-the client discover the host automatically. To remove a manually configured
-host and return to discovery, use `/remhst`. The default KMS TCP port is
-1688; use `/setprt:PORT` only when your organization configured another port.
+Replace `kms.example.org` with your organization's KMS host. For DNS
+auto-discovery, omit `/sethst`. For 32-bit Office, the path is commonly
+under `%ProgramFiles(x86)%`. Older versions may use `Office14` or
+`Office15` instead of `Office16`.
 
-Useful diagnostics:
+Useful commands: `/dstatusall` — license status;
+`/dhistorykms` — KMS history; `/remhst` — clear manual KMS host.
 
-| Command | Purpose |
-| --- | --- |
-| `/dstatus` | Show license status for installed product keys |
-| `/dstatusall` | Show status for all installed licenses |
-| `/dhistorykms` | Show KMS activation history |
-| `/sethst:HOST` | Set an explicitly configured KMS host |
-| `/setprt:PORT` | Set the KMS port (default: 1688) |
-| `/remhst` | Remove the explicit host and restore DNS discovery |
-| `/cachst:TRUE` / `/cachst:FALSE` | Enable or disable KMS host caching |
+More details: [activation guide](docs/activation.md).
 
-See [the client activation guide](docs/activation.md) for context and
-troubleshooting.
+## Notes
 
-## Important version notes
+- Office 2010 and 2013 are legacy versions.
+- Office 2016 and 2019 support ended on 2025-10-14.
+- The key list is retained as a reference. Check the exact edition against
+  [Microsoft's GVLK list](https://learn.microsoft.com/en-us/office/volume-license-activation/gvlks-for-kms-and-active-directory-based-activation-of-office-project-and-visio).
+- MAS and Microsoft volume activation are different methods.
 
-- The current Microsoft GVLK reference covers Office LTSC 2024, Office LTSC
-  2021, Office 2019, and Office 2016, including Project and Visio.
-- Office 2010 and 2013 entries below are retained as historical reference.
-  They are not covered by the current Microsoft Learn GVLK article; validate
-  legacy deployments against the licensing documentation for that release.
-- The ambiguous non-LTSC "Office Professional Plus 2021" and
-  "Office Standard 2021" entries previously labelled "(2024?)" have been
-  removed. The Microsoft-published volume editions are listed as Office
-  LTSC 2021.
-- Office 2016 and Office 2019 reached end of support on 2025-10-14.
-  They no longer receive regular security updates or technical support.
-- Office 2013 support ended on 2023-04-11; Office 2010 support ended on
-  2020-10-13. Treat those entries as legacy-only reference data.
-
-## About Microsoft Activation Scripts (MAS)
-
-The quick-start section at the top links to the MAS project and explains its
-one-line PowerShell launcher. MAS is third-party software, not a Microsoft
-utility, and its activation methods are distinct from native Office volume
-activation with GVLKs, KMS, or Active Directory. Keep those workflows separate
-when diagnosing licensing or documenting an organization's deployment.
-
-## Primary references
-
-- [Microsoft: GVLKs for KMS and Active Directory-based activation of Office,
-  Project, and Visio](https://learn.microsoft.com/en-us/office/volume-license-activation/gvlks-for-kms-and-active-directory-based-activation-of-office-project-and-visio)
-- [Microsoft: Activate volume licensed Office by using KMS](https://learn.microsoft.com/en-us/office/volume-license-activation/activate-office-by-using-kms)
-- [Microsoft: Activate volume licensed Office by using Active Directory](https://learn.microsoft.com/en-us/office/volume-license-activation/activate-office-by-using-active-directory)
-- [Microsoft: Tools to manage volume activation of Office](https://learn.microsoft.com/en-us/office/volume-license-activation/tools-to-manage-volume-activation-of-office)
-- [Microsoft: Troubleshoot volume activation of Office](https://learn.microsoft.com/en-us/office/volume-license-activation/troubleshoot-volume-activation-of-office)
-
----
-
-## GVLK key reference
-
-**Key-data status:** the original key list has been retained, with the
-ambiguous non-LTSC 2021 rows removed. This edit checked key formatting and
-removed duplicates, but did not independently validate every key against
-Microsoft's current table. Verify the exact product edition against the
-official Microsoft reference linked above before deployment.
+## GVLK keys
 
 Office 2010 (legacy):  
 
