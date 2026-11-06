@@ -42,13 +42,25 @@ More details: [activation guide](docs/activation.md).
 
 - Office 2010 and 2013 are legacy versions.
 - Office 2016 and 2019 support ended on 2025-10-14.
-- The key list is retained as a reference. Check the exact edition against
+- For currently documented releases, check the exact edition against
   [Microsoft's GVLK list](https://learn.microsoft.com/en-us/office/volume-license-activation/gvlks-for-kms-and-active-directory-based-activation-of-office-project-and-visio).
+  Older releases and some C2R variants may require the historical reference noted below.
 - MAS and Microsoft volume activation are different methods.
 
 ## GVLK keys
 
-Office 2010 (legacy):  
+The keys below are client setup keys, not licenses. Use the key matching the
+installed volume edition. For Click-to-Run (C2R) deployments, use the entries
+explicitly marked **C2R** where provided; do not substitute them blindly for
+MSI keys. Office suites generally need only the suite key, not separate keys
+for every included application.
+
+The current Microsoft Learn list covers supported volume-licensed releases.
+Historical Office 2010/2013 entries and some C2R-specific variants are
+retained as a reference and cross-checked against the community-maintained
+[py-kms key database](https://py-kms.readthedocs.io/en/latest/Keys.html).
+
+### Office 2010 (legacy)  
 
 Office Professional Plus 2010  
 VYBBJ-TRJPB-QFQRF-QFT4D-H3GVB  
@@ -109,7 +121,7 @@ HVHB3-C6FV7-KQX9W-YQG79-CRY7T
 
 ---
 
-Office 2013 (legacy):  
+### Office 2013 (legacy)  
 
 Office 2013 Professional Plus  
 YC7DK-G2NP3-2QQC3-J6H88-GVGXT  
@@ -162,9 +174,11 @@ PN2WF-29XG2-T9HJ7-JQPJR-FCXK4
 Word 2013  
 6Q7VD-NX8JD-WJ2VH-88V73-4GBJ7  
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Office 2016:  
+---
+
+
+### Office 2016
 
 Office Professional Plus 2016  
 XQNVK-8JYDB-WJ9W3-YJ8YR-WFG99  
@@ -223,9 +237,11 @@ Skype for Business 2016
 Word 2016  
 WXY84-JN2Q9-RBCCQ-3Q3J3-3PFJ6  
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Office 2019:  
+---
+
+
+### Office 2019
 
 Office Professional Plus 2019  
 NMMKJ-6RK4F-KMJVX-8D9MJ-6MWKP  
@@ -275,9 +291,11 @@ NCJ33-JHBBY-HTK98-MYCV8-HMKHJ
 Word 2019  
 PBX3G-NWMT6-Q7XBW-PYJGG-WXD33  
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Office LTSC 2021:  
+---
+
+
+### Office LTSC 2021
 
 Office LTSC Professional Plus 2021  
 FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH  
@@ -318,9 +336,11 @@ HWCXN-K3WBT-WJBKY-R8BD9-XK29P
 Word LTSC 2021  
 TN8H9-M34D3-Y64V9-TR72V-X79KV  
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Office LTSC 2024:  
+---
+
+
+### Office LTSC 2024
 
 Office LTSC Professional Plus 2024  
 XJ2XN-FW8RK-P4HMP-DKDBV-GCVGB  
